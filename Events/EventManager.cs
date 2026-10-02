@@ -10,21 +10,14 @@ public class EventManager : MonoBehaviour
 {
     public static void Update()
     {
-        LevelEvent.Update();
+        LevelEvent.LevelPlaytimeEvent();
     }
 
     public static class LevelEvent
     {
         private static float _lastLevelTime;
-
         public static event Action<float> LevelTimeChanged;
-
         public static event Action<LevelCompleteScreen> LevelCompleted;
-
-        internal static void Update()
-        {
-            LevelPlaytimeEvent();
-        }
 
         internal static void LevelPlaytimeEvent()
         {
